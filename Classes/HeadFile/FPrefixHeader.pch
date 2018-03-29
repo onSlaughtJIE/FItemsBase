@@ -1,0 +1,30 @@
+//
+//  FPrefixHeader.pch
+//  FItemsBase
+//
+//  Created by 连杰 on 2018/3/28.
+//  Copyright © 2018年 放. All rights reserved.
+//
+
+#ifndef FPrefixHeader_pch
+#define FPrefixHeader_pch
+//#ifdef __OBJC__
+#import "FHeadfile.h"
+//网路请求
+#import "AFNetworking.h"
+#import "LBHTTPRequest.h"
+#import "LBNetWorkCache.h"
+#import "LBNetWorkHelper.h"
+#import <MBProgressHUD.h>
+//手势返回
+#import "UINavigationController+FDFullscreenPopGesture.h"
+//约束类
+#import <Masonry.h>
+
+//键盘
+#import "IQKeyboardManager.h"
+//支付类
+#import "MXWechatConfig.h"
+#import <AlipaySDK/AlipaySDK.h>
+//#endif
+#endif /* FPrefixHeader_pch */
