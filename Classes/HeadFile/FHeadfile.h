@@ -9,7 +9,7 @@
 #ifndef FHeadfile_h
 #define FHeadfile_h
 #define FMAIN_API @""
-
+#define UM_APPKEY @"5abd9a31f43e481ec000001b"
 
 /** 屏幕宽度 */
 #define FScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -17,12 +17,15 @@
 #define FScreenHeight [UIScreen mainScreen].bounds.size.height
 /** 比例 */
 #define FScale   [[UIScreen mainScreen] bounds].size.width/320
-/** 定义自己的log */
+/** 定义log */
 #ifdef DEBUG
 #define FLog(...) NSLog(@"%s 第%d行\n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
 #else
 #define FLog(...)
 #endif
+
+//block self
+#define WeakSelf        __weak __typeof(self) wself = self;
 /** 弱引用/强引用 */
 #define FWeakSelf(type) __weak typeof(type) weak##type = type;
 #define FStrongSelf(type) __strong typeof(type) type = weak##type;

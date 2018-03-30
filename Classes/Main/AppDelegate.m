@@ -10,6 +10,9 @@
 #import "QKTabBarController.h"
 #import "LoginViewController.h"
 #import "GuideViewController.h"
+#import "QKNavigationController.h"
+
+
 
 @interface AppDelegate ()<WXApiDelegate>
 
@@ -57,11 +60,12 @@
 }
 #pragma mark - 登录
 -(void)loginIn{
-//    FUserDefaultObjectForKey(@"account"),FUserDefaultObjectForKey(@"passWord")
+
     if ([FUserDefaultObjectForKey(@"account") isEqualToString:@""] || FUserDefaultObjectForKey(@"account") == nil ||[FUserDefaultObjectForKey(@"passWord") isEqualToString:@""] ||FUserDefaultObjectForKey(@"passWord") == nil) {
         LoginViewController *loginVC = [[LoginViewController alloc]init];
-        UINavigationController *naV = [[UINavigationController alloc]initWithRootViewController:loginVC];
-        self.window.rootViewController = naV;
+        QKNavigationController *qkNav = [[QKNavigationController alloc]initWithRootViewController:loginVC];
+        
+        self.window.rootViewController = qkNav;
         [self.window makeKeyAndVisible];
     }
     
@@ -69,8 +73,7 @@
             QKTabBarController *tabBarVC = [[QKTabBarController alloc] init];
             self.window.rootViewController = tabBarVC;
     }
-    
-    
+
 }
 
 
